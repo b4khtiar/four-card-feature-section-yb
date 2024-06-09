@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+/* VARIABLES */
+:root {
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+
+    --backdrop: hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--backdrop);
+}
+
+/* MAIN */
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+    color: var(--very-dark-blue)
+}
+
+.heading {
+    text-align: center;
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.heading h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.heading h2 {
+    font-weight: 200;
+}
+
+.heading p {
+    margin-top: 1rem;
+    color: var(--grayish-blue);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 1.5rem 0;
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    font-size: 15px;
+}
+
+.card_supervisor {
+    border-top: 0.4rem solid var(--cyan);
+}
+
+.card_team-builder {
+    border-top: 0.4rem solid var(--red);
+}
+
+.card_karma {
+    border-top: 0.4rem solid var(--orange);
+}
+
+.card_calculator {
+    border-top: 0.4rem solid var(--blue);
+}
+
+.card h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: var(--grayish-blue);
+}
+
+.card img {
+    float: right;
+    margin-top: 2rem;
+}
+
+/* FOOTER */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 768px) {
+    main {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .heading {
+        max-width: 540px;
+    }
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .card_supervisor {
+        grid-area: 2 / 1 / 4 / 2;
+    }
+
+    .card_team-builder {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
+    .card_karma {
+        grid-area: 3 / 2 / 5 / 3;
+    }
+
+    .card_calculator {
+        grid-area: 2 / 3 / 4 / 4;
+    }
+}
